@@ -1,6 +1,6 @@
 // @ts-check
 import { test, expect } from "@playwright/test";
-import { getEstoque } from "../estoque";
+import { getEstoque } from "../estoque.js";
 
 test.describe("estrutura do HTML", () => {
   test("deve ter o charset em UTF-8 no meta dentro do head", async ({
@@ -164,7 +164,7 @@ test.describe("estrutura do HTML", () => {
     const h2Joao = await section.locator("h2:nth-child(1)");
     await expect(h2Joao).toBeVisible();
     await expect(h2Joao).toHaveText("João");
-    const h2Maria = await section.locator("h2:nth-child(3)");
+    const h2Maria = await section.locator("h2:nth-child(2)");
     await expect(h2Maria).toBeVisible();
     await expect(h2Maria).toHaveText("Maria");
   });
